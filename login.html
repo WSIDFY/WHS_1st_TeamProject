@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link href="css/style.css" rel="stylesheet"/>
+<style>
+* {
+    position : absolute;
+}
+
+hr {
+    top : 100px;
+    width : 2000px;
+}
+
+#OVERLOAD {
+/* Layout Properties */
+top: 15px;
+left: 200px;
+width: 240px;
+height: 49px;
+
+/* UI Properties */
+text-align: left;
+font: normal normal bold 49px/76px Adobe Devanagari;
+letter-spacing: 0px;
+opacity: 1;
+}
+
+
+#Main {
+/* Layout Properties */
+top: 36px;
+left: 565px;
+width: 54px;
+height: 30px;
+/* UI Properties */
+font: var(--unnamed-font-style-normal) normal 300 25px/var(--unnamed-line-spacing-30) var(--unnamed-font-family-roboto);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+text-align: left;
+font: normal normal 300 25px/30px Roboto;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+}
+
+#List {
+/* Layout Properties */
+top: 36px;
+left: 686px;
+width: 39px;
+height: 30px;
+/* UI Properties */
+font: var(--unnamed-font-style-normal) normal 300 25px/var(--unnamed-line-spacing-30) var(--unnamed-font-family-roboto);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+text-align: left;
+font: normal normal 300 25px/30px Roboto;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+}
+
+#Support {
+/* Layout Properties */
+top: 36px;
+left: 792px;
+width: 87px;
+height: 60px;
+/* UI Properties */
+font: var(--unnamed-font-style-normal) normal 300 25px/var(--unnamed-line-spacing-30) var(--unnamed-font-family-roboto);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+text-align: left;
+font: normal normal 300 25px/30px Roboto;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+}
+
+#Etc {
+/* Layout Properties */
+top: 36px;
+left: 946px;
+width: 35px;
+height: 30px;
+/* UI Properties */
+font: var(--unnamed-font-style-normal) normal 300 25px/var(--unnamed-line-spacing-30) var(--unnamed-font-family-roboto);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+text-align: left;
+font: normal normal 300 25px/30px Roboto;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+}
+
+
+#text {
+/* Layout Properties */
+top: 32px;
+left: 1074px;
+width: 306px;
+height: 30px;
+/* UI Properties */
+border: 1px solid #000000;
+border-radius: 20px;
+opacity: 1;
+}
+
+#login {
+    /* Layout Properties */
+top: 24px;
+left: 1420px;
+width: 107px;
+height: 49px;
+/* UI Properties */
+background: #000000 0% 0% no-repeat padding-box;
+border-radius: 30px;
+opacity: 1;
+color : white;
+}
+
+#register {
+/* Layout Properties */
+top: 24px;
+left: 1549px;
+width: 107px;
+height: 49px;
+/* UI Properties */
+border: 1px solid #707070;
+border-radius: 30px;
+opacity: 1;
+}
+
+#input_id {
+/* Layout Properties */
+top: 538px;
+left: 759px;
+width: 344px;
+height: 37px;
+/* UI Properties */
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #00000080;
+border-radius: 15px;
+opacity: 1;
+}
+
+#input_pw {
+/* Layout Properties */
+top: 611px;
+left: 759px;
+width: 344px;
+height: 37px;
+/* UI Properties */
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #00000080;
+border-radius: 15px;
+opacity: 1;
+}
+
+#window {
+/* Layout Properties */
+top: 451px;
+left: 709px;
+width: 448px;
+height: 306px;
+/* UI Properties */
+background: #DBDBDB33 0% 0% no-repeat padding-box;
+border: 1px solid #00000080;
+border-radius: 70px;
+opacity: 1;
+}
+
+#text1 {
+/* Layout Properties */
+top: 338px;
+left: 707px;
+width: 600px;
+height: 49px;
+/* UI Properties */
+letter-spacing: var(--unnamed-character-spacing-0);
+font: normal normal bold 40px/76px Adobe Devanagari;
+color: var(--unnamed-color-000000);
+text-align: left;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+
+}
+
+#text2 {
+/* Layout Properties */
+top: 350px;
+left: 707px;
+width: 548px;
+height: 36px;
+/* UI Properties */
+text-align: left;
+font: normal normal 300 25px/150px Pretendard Variable;
+letter-spacing: 0px;
+color: #e31515;
+opacity: 1;
+}
+
+#idtext{
+/* Layout Properties */
+top: 514px;
+left: 777px;
+width: 60px;
+height: 21px;
+/* UI Properties */
+font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) 18px/68px Pretendard Variable;
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+text-align: left;
+font: normal normal medium 18px/68px Pretendard Variable;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+display : inline-block;
+}
+
+#pwtext {
+/* Layout Properties */
+top: 587px;
+left: 777px;
+width: 70px;
+height: 21px;
+/* UI Properties */
+font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) 18px/68px Pretendard Variable;
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+text-align: left;
+font: normal normal medium 18px/68px Pretendard Variable;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+display : inline-block;
+}
+
+#complete_box {
+/* Layout Properties */
+top: 691px;
+left: 811px;
+width: 240px;
+height: 39px;
+/* UI Properties */
+background: #00000080 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+#complete {
+/* Layout Properties */
+top: 700px;
+left: 910px;
+width: 40px;
+height: 21px;
+/* UI Properties */
+font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) 18px/68px Pretendard Variable;
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-ffffff);
+text-align: left;
+font: normal normal medium 18px/68px Pretendard Variable;
+letter-spacing: 0px;
+color: #FFFFFF;
+opacity: 1;
+background-color:transparent;  
+border:0px transparent solid;
+}
+
+#forgetpasswd {
+    /* Layout Properties */
+top: 653px;
+left: 761px;
+width: 200px;
+height: 16px;
+/* UI Properties */
+font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) 14px/53px Pretendard Variable;
+letter-spacing: var(--unnamed-character-spacing-0);
+text-align: left;
+font: normal normal medium 14px/53px Pretendard Variable;
+letter-spacing: 0px;
+color: #7BA1FB;
+opacity: 1;
+}
+
+#do_register {
+/* Layout Properties */
+top: 653px;
+left: 1029px;
+width: 150px;
+height: 16px;
+/* UI Properties */
+font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) 14px/53px Pretendard Variable;
+letter-spacing: var(--unnamed-character-spacing-0);
+text-align: left;
+font: normal normal medium 14px/53px Pretendard Variable;
+letter-spacing: 0px;
+color: #7BA1FB;
+opacity: 1;
+}
+</style>
+</head>
+<body>
+    <div id="OVERLOAD">
+        OVERLOAD
+    </div>
+    <div id="Main">
+       Main
+    </div>
+    <div id="List">
+        List
+    </div>
+    <div id="Support">
+        Support
+    </div>
+    <div id="Etc">
+        Etc
+    </div>
+
+    <input type="text" class="header" id="text" placeholder="텍스트를 입력하세요">
+    <button onclick="location.href='login.html' " id="login">로그인</button> 
+    <button onclick="location.href='register.html' "id="register">회원가입</button>
+
+    <hr margin-left="00px" size="10px" color="black" width="300px">
+
+    <div id="text1">
+        OVERLOAD 로그인 하기    
+    </div>
+    <div id="text2">
+        사용자님의 개인정보는 암호화되어 저장됩니다.
+    </div>
+    
+    <div id="window"></div>
+    <div id="idtext">아이디</div>
+    <input type="text" id="input_id" name="id" placeholder="아이디를 입력해 주세요.">
+    <div id="pwtext">비밀번호</div>
+    <input type="password" id="input_pw" name="pw" placeholder="비밀번호를 입력해 주세요.">
+    <div id="forgetpasswd">비밀번호를 잊으셨나요?</div>
+    <div id="complete_box"></div>
+    <input type="submit" id="complete" value="완료">
+    <div id="do_register">회원가입 하기</div>
+</body>
+</html>
