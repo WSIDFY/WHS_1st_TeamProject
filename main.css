@@ -1,0 +1,56 @@
+* {
+    position : absolute;
+}
+
+#NEW {
+    /* Layout Properties */
+    top: 345px;
+    left: 264px;
+    width: 1000px;
+    height: 113px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal bold 94px/107px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+#Blackbar {
+    /* Layout Properties */
+    top: 472px;
+    left: 264px;
+    width: 1160px;
+    height: 160px;
+    /* UI Properties */
+    background: #000000 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+#OLwrite {
+    /* Layout Properties */
+    top: 380px;
+    left: 283px;
+    width: 700px;
+    height: 203px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal bold 203px/316px Adobe Devanagari;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+#Registerbutton {
+    /* Layout Properties */
+    top: 669px;
+    left: 264px;
+    width: 700px;
+    height: 67px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal bold 56px/64px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #0044FFB3;
+    opacity: 1;
+}
