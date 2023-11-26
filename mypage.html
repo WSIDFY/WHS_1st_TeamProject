@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이 페이지</title>
+    <link href="css/mypage.css" rel="stylesheet" type="text/css">
+    <link href="css/header.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- header -->
+    <div id="OVERLOAD">OVERLOAD</div>
+    <div id="Main" onclick="location.href='main.html'">Main</div>
+    <div id="List" onclick="location.href='list.html'">List</div>
+    <div id="Support" onclick="'support.html'">Support</div>
+    <div id="Etc" onclick="'etc.html'">Etc</div>
+ 
+    <input type="text" id="search" placeholder="텍스트를 입력하세요">
+    <button onclick="location.href ='login.html'"  id="login">로그인</button> 
+    <button onclick="location.href ='register.html'" id="register">회원가입</button>
+     
+    <hr margin-left="00px" size="10px" color="black" width="300px">
+    <!-- header -->
+
+    <div id="text1">OVERLOAD 정보변경 하기</div>
+    <div id="text2">사용자님의 정보를 변경하여 저장합니다</div>
+    <div id="window"></div>
+
+    <div id="pwtext">비밀번호</div>
+    <input type="password" id="input_pw" name="pw" placeholder="변경할 비밀번호">
+    <div id="pwtext_check">비밀번호 확인</div>
+    <input type="password" id="input_pw_check" name="pw" placeholder="변경할 비밀번호">
+    <div id="nicktext">닉네임</div>
+    <input type="text" id="input_nick" name="pw" placeholder="변경할 닉네임">
+
+    <div id="complete_box"></div>
+    <input type="submit" id="complete" value="완료">
+</body>
+</html>
