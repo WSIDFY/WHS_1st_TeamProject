@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <link href="css/login.css" rel="stylesheet" type="text/css">
+    <link href="css/header.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- header -->
+    <div id="OVERLOAD">OVERLOAD</div>
+    <div id="Main" onclick="location.href='main.html'">Main</div>
+    <div id="List" onclick="location.href='list.html'">List</div>
+    <div id="Support" onclick="'support.html'">Support</div>
+    <div id="Etc" onclick="'etc.html'">Etc</div>
+ 
+    <input type="text" id="search" placeholder="텍스트를 입력하세요">
+    <button onclick="location.href ='login.html'"  id="login">로그인</button> 
+    <button onclick="location.href ='register.html'" id="register">회원가입</button>
+     
+    <hr margin-left="00px" size="10px" color="black" width="300px">
+    <!-- header -->
+
+    <div id="text1">OVERLOAD 로그인 하기</div>
+    <div id="text2">사용자님의 개인정보는 암호화되어 저장됩니다.</div>
+    <div id="window"></div>
+
+    <div id="idtext">아이디</div>
+    <input type="text" id="input_id" name="id" placeholder="아이디를 입력해 주세요.">
+    <div id="pwtext">비밀번호</div>
+    <input type="password" id="input_pw" name="pw" placeholder="비밀번호를 입력해 주세요.">
+
+    <a href="find_passwd.html" id="forget_passwd">비밀번호 찾기</a>
+    <a href="register.html" id="do_register">회원가입</a>
+    <div id="complete_box"></div>
+    <input type="submit" id="complete" value="완료">
+</body>
+</html>

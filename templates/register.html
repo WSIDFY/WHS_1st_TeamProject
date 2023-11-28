@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+    <link href="../static/css/header.css"" rel="stylesheet" type="text/css">
+    <link href="../static/css/register.css"" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/register.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/header.css')}}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- header -->
+    <div id="OVERLOAD">OVERLOAD</div>
+    <div id="Main" onclick="location.href='main.html'">Main</div>
+    <div id="List" onclick="location.href='list.html'">List</div>
+    <div id="Support" onclick="'support.html'">Support</div>
+    <div id="Etc" onclick="'etc.html'">Etc</div>
+ 
+    <input type="text" id="search" placeholder="텍스트를 입력하세요">
+    <button onclick="location.href ='login.html'"  id="login">로그인</button> 
+    <button onclick="location.href ='register.html'" id="register">회원가입</button>
+     
+    <hr margin-left="00px" size="10px" color="black" width="300px">
+    <!-- header -->
+    
+    <div id="text1">OVERLOAD 계정 만들기</div>
+    <div id="text2">사용자님의 개인정보는 암호화되어 저장됩니다.</div>
+    <div id="window"></div>
+
+    <form >
+        <div id="idtext">아이디</div>
+        <input type="text" id="input_id" placeholder="아이디를 입력해 주세요.">
+        <div id="pwtext">비밀번호</div>
+        <input type="password" id="input_pw" placeholder="비밀번호를 입력해 주세요.">
+        <div id="nicknametext">닉네임</div>
+        <input type="text" id="input_nickname"  placeholder="닉네임을 입력해 주세요.">
+        <div id="mailtext">이메일</div>
+        <input type="text" id="input_mail" placeholder="이메일을 입력해 주세요.">
+
+        <div id="complete_box"></div>
+        <input type="submit" id="complete" value="완료" onclick="registerUser()">
+    </form>
+
+    <script>
+        function registerUser() {
+            let userid = document.getElementById("input_id").value;
+            let password = document.getElementById("input_pw").value;
+            let nickname = document.getElementById("input_nickname").value;
+            let email = document.getElementById("input_mail").value;            
+
+            if (Validation_test(userid, password, nickname, email)) {
+                alert("회원가입 성공");
+                // 회원가입 후 처리
+            }
+        }
+
+        function Validation_test(userid, password, nickname, email) {
+            const id_Validation = /^[a-z0-9_-]{2,20}$/; // 아이디 : 글자 수 제한(2~20), 영문과 숫자
+            const pw_Validation = /^.*(?=^.{8,16}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[~,!,@,#,$,*,(,),=,+,_,.,|]).*$/; // 비밀번호 : 글자 수 제한(8~16) 영문, 숫자, 특수문자
+            const email_Validation = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/; // 이메일 : @를 포함한 영문, 숫자
+            
+            if (userid && password && nickname && email) {
+                if (!id_Validation.test(userid.trim())) {
+                    alert("ID는 2~20글자의 영문과 숫자로 이루어져야 합니다.");
+
+                    return false;
+                }
+
+                if (!pw_Validation.test(password.trim())) {
+                    alert("비밀번호는 8~16글자의 영문, 숫자, 특수문자로 이루어져야 합니다.");
+
+                    return false;
+                }
+
+                if (!email_Validation.test(email.trim())) {
+                    alert("email은 @를 포함한 영문과 숫자로 이루어져야 합니다.");
+
+                    return false;
+                } 
+               
+            } else {
+                alert("모든 정보를 입력해주세요");
+
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
