@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품 리스트 페이지</title>
+    <link href="../static/css/header.css"" rel="stylesheet" type="text/css">
+    <link href="../static/css/product_list.css"" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/product_list.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/header.css')}}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- header -->
+    <div id="OVERLOAD">OVERLOAD</div>
+    <div id="Main" onclick="location.href='main.html'">Main</div>
+    <div id="List" onclick="location.href='product_list.html'">List</div>
+    <div id="Support" onclick="'support.html'">Support</div>
+    <div id="Etc" onclick="'etc.html'">Etc</div>
+ 
+    <input type="text" id="search" placeholder="텍스트를 입력하세요">
+    <button onclick="location.href ='login.html'"  id="login">로그인</button> 
+    <button onclick="location.href ='register.html'" id="register">회원가입</button>
+
+    <hr margin-left="00px" size="10px" color="black" width="300px">
+    <!-- header -->
+
+    <div id="text1">요즘 유행하는 옷이에요!</div>
+
+    <div class="exp1" onclick="location.href = 'product1_detail.html'">
+        <img src="../static/image/product1.jfif" class="product_picture" id="product1">
+        <div id="exp1_1" class="exp_1">Black Hoodie</div>
+        <div id="exp1_2" class="exp_2">For men/women</div>
+        <div id="exp1_3" class="exp_3">39,000won</div>
+    </div>
+
+    <div class="exp2" onclick="location.href = 'product2_detail.html'">
+        <img src="../static/image/product2.jfif" class="product_picture" id="product2">
+        <div id="exp2_1" class="exp_1">Blue Hoodie</div>
+        <div id="exp2_2" class="exp_2">For men</div>
+        <div id="exp2_3" class="exp_3">29,000won</div>
+    </div>
+
+    <div class="exp3" onclick="location.href = 'product3_detail.html'"></div>
+        <img src="../static/image/product3.jfif" class="product_picture" id="product3">
+        <div id="exp3_1" class="exp_1">Grey Hoodie</div>
+        <div id="exp3_2" class="exp_2">For men</div>
+        <div id="exp3_3" class="exp_3">35,000won</div>
+    </div>
+
+    <div class="exp4" onclick="location.href = 'product4_detail.html'">
+        <img src="../static/image/product4.jfif" class="product_picture" id="product4">
+        <div id="exp4_1" class="exp_1">Blue Sweatshirt</div>
+        <div id="exp4_2" class="exp_2">For men</div>
+        <div id="exp4_3" class="exp_3">49,000won</div>
+    </div>
+
+    <div class="exp5" onclick="location.href = 'product5_detail.html'">
+        <img src="../static/image/product5.jfif" class="product_picture" id="product5">
+        <div id="exp5_1" class="exp_1">Black Sweatshirt</div>
+        <div id="exp5_2" class="exp_2">For men/women</div>
+        <div id="exp5_3" class="exp_3">25,000won</div>
+    </div>
+
+    <div id="text2">이런 상품은 어떠세요?</div>
+
+    <div class="exp6" onclick="location.href = 'product6_detail.html'">
+        <img src="../static/image/product6.jfif" class="product_picture" id="product6">
+        <div id="exp6_1" class="exp_1">White Hoodie</div>
+        <div id="exp6_2" class="exp_2">For women</div>
+        <div id="exp6_3" class="exp_3">37,000won</div>
+    </div>
+
+    <div class="exp7" onclick="location.href = 'product7_detail.html'">
+        <img src="../static/image/product7.jfif" class="product_picture" id="product7">
+        <div id="exp7_1" class="exp_1">White Sweatshirt</div>
+        <div id="exp7_2" class="exp_2">For women</div>
+        <div id="exp7_3" class="exp_3">19,000won</div>
+    </div>
+
+    <div class="exp8" onclick="location.href = 'product8_detail.html'">
+    <img src="../static/image/product8.jfif" class="product_picture" id="product8">
+    <div id="exp8_1" class="exp_1">Grey Sweatshirt</div>
+    <div id="exp8_2" class="exp_2">For men</div>
+    <div id="exp8_3" class="exp_3">33,000won</div>
+    </div>
+
+    <div class="exp9" onclick="location.href = 'product9_detail.html'">
+        <img src="../static/image/product9.jfif" class="product_picture" id="product9">
+        <div id="exp9_1" class="exp_1">Black Slacks</div>
+        <div id="exp9_2" class="exp_2">For men</div>
+        <div id="exp9_3" class="exp_3">50,000won</div>
+    </div>
+
+    <div class="exp10" onclick="location.href = 'product10_detail.html'">
+        <img src="../static/image/product10.jfif" class="product_picture" id="product10">
+        <div id="exp10_1" class="exp_1">Grey Slacks</div>
+        <div id="exp10_2" class="exp_2">For men</div>
+        <div id="exp10_3" class="exp_3">40,000won</div>
+    </div>
+    
+</body>
+</html>

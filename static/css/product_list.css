@@ -1,0 +1,389 @@
+* {
+    position : absolute;
+}
+
+#text1 {
+    /* Layout Properties */
+    top: 149px;
+    left: 428px;
+    width: 600px;
+    height: 59px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal bold 49px/56px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+#text2 { 
+    /* Layout Properties */
+    top: 569px;
+    left: 428px;
+    width: 530px;
+    height: 59px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal bold 49px/56px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.product_picture {
+    /* Layout Properties */
+    top: 236px;
+    left: 428px;
+    width: 176px;
+    height: 211px;
+    /* UI Properties */
+    background: transparent url('img/2112059_1_500.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+#product1 {
+    /* Layout Properties */
+    top: 236px;
+    left: 428px;
+    width: 176px;
+    height: 211px;
+}
+
+#product2 {
+    /* Layout Properties */
+    top: 236px;
+    left: 650px;
+    width: 176px;
+    height: 211px;
+}
+
+#product3 {
+    /* Layout Properties */
+    top: 236px;
+    left: 872px;
+    width: 176px;
+    height: 211px;
+}
+
+#product4 {
+    /* Layout Properties */
+    top: 236px;
+    left: 1094px;
+    width: 176px;
+    height: 211px;
+}
+
+#product5 {
+    /* Layout Properties */
+    top: 236px;
+    left: 1316px;
+    width: 176px;
+    height: 211px;
+}
+
+#product6 {
+    /* Layout Properties */
+    top: 656px;
+    left: 428px;
+    width: 176px;
+    height: 211px;
+}
+
+#product7 {
+    /* Layout Properties */
+    top: 656px;
+    left: 650px;
+    width: 176px;
+    height: 211px;
+}
+
+#product8 {
+    /* Layout Properties */
+    top: 656px;
+    left: 872px;
+    width: 176px;
+    height: 211px;
+}
+
+#product9 {
+    /* Layout Properties */
+    top: 656px;
+    left: 1094px;
+    width: 176px;
+    height: 211px;
+}
+
+#product10 {
+    /* Layout Properties */
+    top: 656px;
+    left: 1316px;
+    width: 176px;
+    height: 211px;
+}
+
+.exp_1 {
+    /* UI Properties */
+    text-align: left;
+    font: normal normal bold 20px/16px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.exp_2 {
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 12px/16px Pretendard Variable;
+    letter-spacing: 0px;
+    color: blue;
+    opacity: 1;
+}
+
+.exp_3 {
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 12px/16px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+#exp1_1 {
+    /* Layout Properties */
+    top: 465px;
+    left: 428px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp1_2 {
+    /* Layout Properties */
+    top: 483px;
+    left: 428px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp1_3 {
+    /* Layout Properties */
+    top: 509px;
+    left: 428px;
+    width: 175px;
+    height: 32px;
+}
+
+#exp2_1 {
+    /* Layout Properties */
+    top: 465px;
+    left: 650px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp2_2 {
+    /* Layout Properties */
+    top: 483px;
+    left: 650px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp2_3 {
+    /* Layout Properties */
+    top: 509px;
+    left: 650px;
+    width: 175px;
+    height: 32px;
+}
+
+#exp3_1 {
+    /* Layout Properties */
+    top: 465px;
+    left: 872px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp3_2 {
+    /* Layout Properties */
+    top: 483px;
+    left: 872px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp3_3 {
+    /* Layout Properties */
+    top: 509px;
+    left: 872px;
+    width: 175px;
+    height: 32px;
+}
+
+#exp4_1 {
+    /* Layout Properties */
+    top: 465px;
+    left: 1094px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp4_2 {
+    /* Layout Properties */
+    top: 483px;
+    left: 1094px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp4_3 {
+    /* Layout Properties */
+    top: 509px;
+    left: 1094px;
+    width: 175px;
+    height: 32px;
+}
+
+#exp5_1 {
+    /* Layout Properties */
+top: 465px;
+left: 1316px;
+width: 175px;
+height: 16px;
+}
+
+#exp5_2 {
+    /* Layout Properties */
+top: 483px;
+left: 1316px;
+width: 175px;
+height: 16px;
+}
+
+#exp5_3 {
+    /* Layout Properties */
+top: 509px;
+left: 1316px;
+width: 175px;
+height: 32px;
+}
+
+#exp6_1 {
+    /* Layout Properties */
+    top: 885px;
+    left: 428px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp6_2 {
+    /* Layout Properties */
+    top: 903px;
+    left: 428px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp6_3 {
+    /* Layout Properties */
+    top: 929px;
+    left: 428px;
+    width: 175px;
+    height: 32px;
+}
+
+#exp7_1 {
+    /* Layout Properties */
+    top: 885px;
+    left: 650px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp7_2 {
+    /* Layout Properties */
+    top: 903px;
+    left: 650px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp7_3 {
+    /* Layout Properties */
+    top: 929px;
+    left: 650px;
+    width: 175px;
+    height: 32px;
+}
+
+#exp8_1 {
+    /* Layout Properties */
+    top: 885px;
+    left: 872px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp8_2 {
+    /* Layout Properties */
+    top: 903px;
+    left: 872px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp8_3 {
+    /* Layout Properties */
+    top: 929px;
+    left: 872px;
+    width: 175px;
+    height: 32px;
+}
+
+#exp9_1 {
+    /* Layout Properties */
+    top: 885px;
+    left: 1094px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp9_2 {
+    /* Layout Properties */
+    top: 903px;
+    left: 1094px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp9_3 {
+    /* Layout Properties */
+    top: 929px;
+    left: 1094px;
+    width: 175px;
+    height: 32px;
+}
+
+#exp10_1 {
+    /* Layout Properties */
+    top: 885px;
+    left: 1316px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp10_2 {
+    /* Layout Properties */
+    top: 903px;
+    left: 1316px;
+    width: 175px;
+    height: 16px;
+}
+
+#exp10_3 {
+    /* Layout Properties */
+    top: 929px;
+    left: 1316px;
+    width: 175px;
+    height: 32px;
+}
