@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰 페이지</title>
+</head>
+<body>
+    <h1>사용자 문의 페이지</h1>
+
+    <form action="/submit_inquiry" method="post">
+        <label for="username">사용자 이름:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="inquiry_text">문의 내용:</label>
+        <textarea id="inquiry_text" name="inquiry_text" required></textarea>
+        <br>
+        <button type="submit">문의 남기기</button>
+    </form>
+    <hr>
+    
+    <h2>사용자 문의 내역</h2>
+    <a href="/inquiry">문의 내역 보기</a>
+</body>
+</html>

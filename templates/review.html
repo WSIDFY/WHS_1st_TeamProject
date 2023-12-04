@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰 페이지</title>
+    <link href="../static/css/review.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- header -->
+    <div id="OVERLOAD">OVERLOAD</div>
+    <div id="Main" onclick="location.href='main.html'">Main</div>
+    <div id="List" onclick="location.href='product_list.html'">List</div>
+    <div id="Support" onclick="location.href='support.html'">Support</div>
+    <div id="Etc" onclick="location.href='mypage.html'">Etc</div>
+    
+    <form>
+        <input type="text" id="search" placeholder="텍스트를 입력하세요">
+    </form>
+
+    <button onclick="location.href ='login.html'"  id="login">로그인</button> 
+    <button onclick="location.href ='register.html'" id="register">회원가입</button>
+        
+    <hr margin-left="00px" size="10px" color="black" width="300px">
+    <!-- header -->
+
+    <div id="text1">OVERLOAD 리뷰</div>
+    <div id="text2">다양한 사용자들이 남긴 리뷰입니다.</div>
+
+    <div class="container">
+        <br>
+        <table class="table table-hover table-striped text-center" style="border: 1px solid;">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>글쓴이</th>
+                    <th>조회수</th>
+                </tr>
+            </thead> 
+            <tbody>
+                {% for i in data_list %}
+                <tr>
+                    <td>{{ i[0] }}</td>
+                    <td>{{ i[1] }}</td>
+                    <td>{{ i[2] }}</td>
+                    <td>{{ i[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+    
+    
+        </table>
+    
+        <hr>
+        <div>
+            <ul class="pagination justify-content-center">
+                <li><a href="#" style="margin-right:5px" class="text-secondary"> ◀ </a></li>
+                <li><a href="#" style="margin-right:5px" class="text-secondary"> 1 </a></li>
+                <li><a href="#" style="margin-right:5px"; class="text-secondary"> 2 </a></li>
+                <li><a href="#" style="margin-right:5px"; class="text-secondary"> 3 </a></li>
+                <li><a href="#" style="margin-right:5px"; class="text-secondary"> 4 </a></li>
+                <li><a href="#" style="margin-right:5px"; class="text-secondary"> 5 </a></li>
+                <li><a href="#" style="margin-right:5px"; class="text-secondary"> ▶ </a></li>
+            </ul>
+        </div>
+        <a class="btn btn-outline-info float-right">글쓰기</a>
+    
+    </div>
+</body>
+</html>

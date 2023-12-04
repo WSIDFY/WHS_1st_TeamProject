@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰 페이지</title>
+    <link href="../static/css/inquiry.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/header.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- header -->
+    <div id="OVERLOAD">OVERLOAD</div>
+    <div id="Main" onclick="location.href='main.html'">Main</div>
+    <div id="List" onclick="location.href='product_list.html'">List</div>
+    <div id="Support" onclick="location.href='support.html'">Support</div>
+    <div id="Etc" onclick="location.href='mypage.html'">Etc</div>
+    
+    <form>
+        <input type="text" id="search" placeholder="텍스트를 입력하세요">
+    </form>
+
+    <button onclick="location.href ='login.html'"  id="login">로그인</button> 
+    <button onclick="location.href ='register.html'" id="register">회원가입</button>
+        
+    <hr margin-left="00px" size="10px" color="black" width="300px">
+    <!-- header -->
+
+    <div id="text1">사용자</div>
+    <div id="text2">사용자가 남긴 문의입니다.</div>
+    
+    <div id="box">
+        <!-- 문의가 있을 경우 -->
+        {% if inquiries %}
+            <ul>
+                {% for inquiry in inquiries %}
+                    <li>
+                        <strong id="username" onclick="showInquiry('{{ inquiry.username }}', '{{ inquiry.inquiry_text }}')">
+                            {{ inquiry.username }}
+                        </strong>: {{ inquiry.inquiry_text }}
+                    </li>
+                {% endfor %}
+            </ul>
+        <!-- 문의가 없을 경우 -->
+        {% else %}
+            <p>아직 문의가 없습니다.</p>
+        {% endif %}
+    </div>
+
+   
+    <div id="inquiryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeInquiryModal()">&times;</span>
+            <div id="inquiryDetails">
+              
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showInquiry(username, text) {
+            document.getElementById('inquiryDetails').innerHTML = '<strong>' + username + '</strong>: ' + text;
+            document.getElementById('inquiryModal').style.display = 'block';
+        }
+
+        function closeInquiryModal() {
+            document.getElementById('inquiryModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('inquiryModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
