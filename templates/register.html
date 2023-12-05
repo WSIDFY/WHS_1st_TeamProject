@@ -19,29 +19,39 @@
     <div id="text2">사용자님의 개인정보는 암호화되어 저장됩니다.</div>
     <div id="window"></div>
 
-    <form>
-        <div id="idtext">아이디</div>
-        <input type="text" id="input_id" placeholder="아이디를 입력해 주세요.">
-        <div id="pwtext">비밀번호</div>
-        <input type="password" id="input_pw" placeholder="비밀번호를 입력해 주세요.">
-        <div id="nicknametext">닉네임</div>
-        <input type="text" id="input_nickname"  placeholder="닉네임을 입력해 주세요.">
-        <div id="mailtext">이메일</div>
-        <input type="text" id="input_mail" placeholder="이메일을 입력해 주세요.">
+    <form method="post" action="/register" onsubmit="return registerUser()">
+        {% if error_message %}
+        <script>
+            alert("{{ error_message }}");
+        </script>
+        {% endif %}
 
+        <div id="idtext">아이디</div>
+        <input type="text" name="userid" id="input_id" placeholder="아이디를 입력해 주세요.">
+        <div id="pwtext">비밀번호</div>
+        <input type="password" name="password" id="input_pw" placeholder="비밀번호를 입력해 주세요.">
+        <div id="nicknametext">닉네임</div>
+        <input type="text" name="nickname" id="input_nickname"  placeholder="닉네임을 입력해 주세요.">
+        <div id="mailtext">이메일</div>
+        <input type="text" name="email" id="input_mail" placeholder="이메일을 입력해 주세요.">
+    
         <div id="complete_box"></div>
-        <input type="submit" id="complete" value="완료" onclick="registerUser()">
+        <input type="submit" id="complete" value="완료">
     </form>
 
     <script>
         function registerUser() {
+            
             let userid = document.getElementById("input_id").value;
             let password = document.getElementById("input_pw").value;
             let nickname = document.getElementById("input_nickname").value;
-            let email = document.getElementById("input_mail").value;            
-
-            if (Validation_test(userid, password, nickname, email)) {
-                alert("회원가입 성공");
+            let email = document.getElementById("input_mail").value;
+            
+            if(Validation_test(userid, password, nickname, email)) {
+                return true;
+            }
+            else {
+                return false;
             }
         }
 
