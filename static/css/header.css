@@ -113,3 +113,15 @@ hr {
     border-radius: 30px;
     opacity: 1;
 }
+
+#meet {
+    /* Layout Properties */
+    top: 14px;
+    left: 1420px;
+    width: 500px;
+    height: 49px;
+    /* UI Properties */
+    background: white 0% 0% no-repeat padding-box;
+    opacity: 1;
+    color :black;
+}

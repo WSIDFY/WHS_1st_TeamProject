@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
+import os
 
 #애플리케이션 객체 생성
 app = Flask(__name__) 
@@ -33,7 +34,7 @@ def register():
             
             #SQL 쿼리 실행
             cur.execute("INSERT INTO user (id, name, pw, email) VALUES (%s, %s, %s, %s)",
-                    (userid, password, nickname, email))
+                    (userid, nickname, password, email))
 
             #변경 사항을 확정시킴(반드시 호출되어야 함)
             mysql.connection.commit()
@@ -45,6 +46,39 @@ def register():
             return f'에러 발생: {str(e)}'
 
     return render_template('register.html')
+
+app.secret_key = os.urandom(24)
+
+# 로그인 페이지
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        userid = request.form['userid']
+        password = request.form['password']
+
+        try:
+            #mysql과 상호작용하는 커서 객체 생성
+            cur = mysql.connection.cursor()
+
+            #사용자 정보를 가져옴 
+            cur.execute("SELECT * FROM user WHERE id = %s", (userid, ))
+            user = cur.fetchone()
+            
+            #사용자가 존재하고 비밀번호가 일치하면 로그인 성공
+            if user and user[2] == password:
+                session['userid'] = user[0]
+                session['nickname'] = user[1]
+                success_message = "로그인 성공!"
+                return render_template('login.html', success_message=success_message)  # 로그인 성공 시 대시보드 페이지로 리다이렉트
+
+            # 로그인 실패
+            error_message = '아이디 또는 비밀번호가 올바르지 않습니다.'
+            return render_template('login.html', error_message=error_message)
+
+        except Exception as e:
+            return f'에러 발생: {str(e)}'
+
+    return render_template('login.html')
 
 #문의 글을 담을 리스트
 inquiries = []
