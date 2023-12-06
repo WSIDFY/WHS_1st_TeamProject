@@ -47,7 +47,9 @@ def register():
 
     return render_template('register.html')
 
+
 app.secret_key = os.urandom(24)
+
 
 # 로그인 페이지
 @app.route('/login', methods=['GET', 'POST'])
@@ -69,7 +71,7 @@ def login():
                 session['userid'] = user[0]
                 session['nickname'] = user[1]
                 success_message = "로그인 성공!"
-                return render_template('login.html', success_message=success_message)  # 로그인 성공 시 대시보드 페이지로 리다이렉트
+                return render_template('login.html', success_message=success_message)  
 
             # 로그인 실패
             error_message = '아이디 또는 비밀번호가 올바르지 않습니다.'
