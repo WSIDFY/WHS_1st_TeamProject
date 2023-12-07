@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>header</title>
     <link href="../static/css/header.css" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/header.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
     <!-- header -->
     <div id="OVERLOAD">OVERLOAD</div>
-    <div id="Main" onclick="location.href='main.html'">Main</div>
-    <div id="List" onclick="location.href='product_list.html'">List</div>
-    <div id="Support" onclick="location.href='support.html'">Support</div>
-    <div id="Etc" onclick="location.href='mypage.html'">Etc</div>
+    <div id="Main" onclick="location.href='/'">Main</div>
+    <div id="List" onclick="location.href='/product_list'">List</div>
+    <div id="Support" onclick="location.href='/support'">Support</div>
+    <div id="Etc" onclick="location.href='/mypage.'">Etc</div>
     
     <form>
         <input type="text" id="search" placeholder="텍스트를 입력하세요">
     </form>
 
-    <button onclick="location.href ='login.html'"  id="login">로그인</button> 
-    <button onclick="location.href ='register.html'" id="register">회원가입</button>
+    {% if 'userid' in session %}
+        <h2 id="meet">안녕하세요, {{ session['nickname'] }} 님!</h2>
+    {% else %}
+    <button onclick="location.href ='/login'"  id="login">로그인</button> 
+    <button onclick="location.href ='/register'" id="register">회원가입</button>
+    {% endif %} 
         
     <hr margin-left="00px" size="10px" color="black" width="300px">
     <!-- header -->

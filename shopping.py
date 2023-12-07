@@ -2,8 +2,10 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
 import os
 
+
 #애플리케이션 객체 생성
 app = Flask(__name__) 
+
 
 #MySQL 연결설정
 mysql = MySQL(app) 
@@ -11,6 +13,17 @@ app.config['MYSQL_HOST'] = '158.247.230.44'  # MySQL 서버 주소
 app.config['MYSQL_USER'] = 'dev'  # MySQL 사용자 이름
 app.config['MYSQL_PASSWORD'] = 'overload'  # MySQL 비밀번호
 app.config['MYSQL_DB'] = 'userinfo'  # 사용할 데이터베이스 이름
+
+
+#문의 글을 담을 리스트
+inquiries = []
+
+
+#메인 페이지
+@app.route('/')
+def index():
+    return render_template("index.html")
+
 
 #회원가입 페이지
 @app.route('/register', methods=['GET', 'POST'])
@@ -82,16 +95,22 @@ def login():
 
     return render_template('login.html')
 
-#문의 글을 담을 리스트
-inquiries = []
 
-#문의 글을 제출하는 페이지 라우팅
+#제품 리스트 페이지
+@app.route('/product_list')
+def product_list():
+    return render_template("product_list.html")
+
+
+#문의 제출 페이지
 @app.route('/submit_inquiry')
 def submit_inquiry():
     return render_template('submit_inquiry.html')
 
 @app.route('/submit_inquiry', methods=['POST'])
-#문의 글을 제출하는 기능 
+
+
+#문의 제출 기능 
 def submit():
     username = request.form.get('username')
     inquiry_text = request.form.get('inquiry_text')
@@ -101,10 +120,12 @@ def submit():
     
     return render_template('submit_inquiry.html')
 
-#문의 글을 볼 수 있는 페이지 라우팅
+
+#문의 확인 페이지 
 @app.route('/inquiry')
 def reviews():
     return render_template('inquiry.html', inquiries=inquiries)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
