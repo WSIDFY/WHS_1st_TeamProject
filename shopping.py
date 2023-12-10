@@ -134,4 +134,4 @@ def inquiry():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='158.247.230.44', port=5000)
