@@ -12,7 +12,7 @@
     <div id="OVERLOAD">OVERLOAD</div>
     <div id="Main" onclick="location.href='/'">Main</div>
     <div id="List" onclick="location.href='/product_list'">List</div>
-    <div id="Support" onclick="location.href='/support'">Support</div>
+    <div id="Support" onclick="location.href='/inquiry'">Support</div>
     <div id="Etc" onclick="location.href='/mypage.'">Etc</div>
     
     <form>
@@ -21,6 +21,7 @@
 
     {% if 'userid' in session %}
         <h2 id="meet">안녕하세요, {{ session['nickname'] }} 님!</h2>
+        <button onclick="location.href ='/logout'" id="logout">로그아웃</button>
     {% else %}
     <button onclick="location.href ='/login'"  id="login">로그인</button> 
     <button onclick="location.href ='/register'" id="register">회원가입</button>

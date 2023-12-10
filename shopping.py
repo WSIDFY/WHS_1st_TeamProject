@@ -84,7 +84,7 @@ def login():
                 session['userid'] = user[0]
                 session['nickname'] = user[1]
                 success_message = "로그인 성공!"
-                return render_template('login.html', success_message=success_message)  
+                return render_template('product_list.html', success_message=success_message)  
 
             # 로그인 실패
             error_message = '아이디 또는 비밀번호가 올바르지 않습니다.'
@@ -94,6 +94,14 @@ def login():
             return f'에러 발생: {str(e)}'
 
     return render_template('login.html')
+
+
+#로그아웃 페이지
+@app.route('/logout')
+def logout():
+    session.pop('userid', None)
+    session.pop('nickname', None)
+    return render_template('index.html')
 
 
 #제품 리스트 페이지
@@ -106,8 +114,6 @@ def product_list():
 @app.route('/submit_inquiry')
 def submit_inquiry():
     return render_template('submit_inquiry.html')
-
-@app.route('/submit_inquiry', methods=['POST'])
 
 
 #문의 제출 기능 
@@ -123,7 +129,7 @@ def submit():
 
 #문의 확인 페이지 
 @app.route('/inquiry')
-def reviews():
+def inquiry():
     return render_template('inquiry.html', inquiries=inquiries)
 
 

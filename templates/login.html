@@ -28,6 +28,13 @@
         </script>
         {% endif %}
 
+        {% if error_message %}
+        <script>
+            alert("{{ error_message }}");
+        </script>
+        {% endif %}
+       
+
         <div id="idtext">아이디</div>
         <input type="text" id="input_id" name="userid" placeholder="아이디를 입력해 주세요.">
         <div id="pwtext">비밀번호</div>
