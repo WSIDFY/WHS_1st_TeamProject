@@ -1,10 +1,7 @@
-* {
-    position : absolute;
-}
-
-hr {
+#hr {
     top : 100px;
     width : 2036px;
+    position : absolute;
 }
 
 #OVERLOAD {
@@ -13,6 +10,7 @@ hr {
     left: 200px;
     width: 240px;
     height: 49px;
+    position : absolute;
 
     /* UI Properties */
     text-align: left;
@@ -27,6 +25,8 @@ hr {
     left: 565px;
     width: 54px;
     height: 30px;
+    position : absolute;
+
     /* UI Properties */
     text-align: left;
     font: normal normal 300 25px/30px Roboto;
@@ -41,6 +41,8 @@ hr {
     left: 686px;
     width: 39px;
     height: 30px;
+    position : absolute;
+
     /* UI Properties */
     text-align: left;
     font: normal normal 300 25px/30px Roboto;
@@ -55,6 +57,8 @@ hr {
     left: 792px;
     width: 87px;
     height: 60px;
+    position : absolute;
+
     /* UI Properties */
     text-align: left;
     font: normal normal 300 25px/30px Roboto;
@@ -69,6 +73,8 @@ hr {
     left: 946px;
     width: 35px;
     height: 30px;
+    position : absolute;
+    
     /* UI Properties */
     text-align: left;
     font: normal normal 300 25px/30px Roboto;
@@ -83,6 +89,8 @@ hr {
     left: 1074px;
     width: 306px;
     height: 30px;
+    position : absolute;
+
     /* UI Properties */
     border: 1px solid #000000;
     border-radius: 20px;
@@ -95,6 +103,8 @@ hr {
     left: 1420px;
     width: 107px;
     height: 49px;
+    position : absolute;
+
     /* UI Properties */
     background: #000000 0% 0% no-repeat padding-box;
     border-radius: 30px;
@@ -108,6 +118,8 @@ hr {
     left: 1549px;
     width: 107px;
     height: 49px;
+    position : absolute;
+
     /* UI Properties */
     border: 1px solid #707070;
     border-radius: 30px;
@@ -120,6 +132,8 @@ hr {
     left: 1550px;
     width: 500px;
     height: 49px;
+    position : absolute;
+
     /* UI Properties */
     background: white 0% 0% no-repeat padding-box;
     opacity: 1;
@@ -132,6 +146,8 @@ hr {
     left: 1420px;
     width: 107px;
     height: 49px;
+    position : absolute;
+
     /* UI Properties */
     background: #000000 0% 0% no-repeat padding-box;
     border-radius: 30px;

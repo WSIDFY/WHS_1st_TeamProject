@@ -11,17 +11,26 @@
     <!-- header -->
     {% include 'header.html' %}
     <!-- header -->
-
-    <form id="submit" action="/submit_inquiry" method="post">
-        <label for="username">사용자 이름:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="inquiry_text">문의 내용:</label>
-        <textarea id="inquiry_text" name="inquiry_text" required></textarea>
-        <br>
-        <button type="submit">문의 남기기</button>
-    </form>
     
-    <a href="/inquiry">문의 내역 보기</a>
+    <div id="box"></div>
+    <form action="/submit_inquiry" method="post">
+
+        {% if success_message %}
+        <script>
+            alert("{{ success_message }}");
+        </script>
+        {% endif %}
+
+        <label for="inquiry_head" id="text1">문의 제목:</label>
+        <input type="text" id="inquiry_head" name="inquiry_head" required>
+        <br>
+
+        <label for="inquiry_body" id="text2">문의 내용:</label>
+        <textarea id="inquiry_body" name="inquiry_body" required></textarea>
+        <br>
+
+        <button type="submit" id="submit">문의 남기기</button>
+    </form>
+   
 </body>
 </html>

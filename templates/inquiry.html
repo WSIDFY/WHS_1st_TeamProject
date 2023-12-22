@@ -22,48 +22,22 @@
         {% if inquiries %}
             <ul>
                 {% for inquiry in inquiries %}
-                    <li>
-                        <strong id="username" onclick="showInquiry('{{ inquiry.username }}', '{{ inquiry.inquiry_text }}')">
-                            {{ inquiry.username }}
-                        </strong>: {{ inquiry.inquiry_text }}
+                <form action="/view_inquiry" method="post">
+                    <input type="hidden" name="inquiry_id" value="{{ inquiry[0] }}">
+                    <button type="submit">
+                    <li id="list">
+                        {{ inquiry[1] }}
                     </li>
+                    </button>
+                    <hr>
+                </form>
                 {% endfor %}
             </ul>
-            
-        
+
         <!-- 문의가 없을 경우 -->
         {% else %}
-           
+            <p>문의가 없습니다.</p>
         {% endif %}
-
     </div>
-
-   
-    <div id="inquiryModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeInquiryModal()">&times;</span>
-            <div id="inquiryDetails">
-              
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function showInquiry(username, text) {
-            document.getElementById('inquiryDetails').innerHTML = '<strong>' + username + '</strong>: ' + text;
-            document.getElementById('inquiryModal').style.display = 'block';
-        }
-
-        function closeInquiryModal() {
-            document.getElementById('inquiryModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            var modal = document.getElementById('inquiryModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-    </script>
 </body>
 </html>

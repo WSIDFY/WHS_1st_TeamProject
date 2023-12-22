@@ -1,9 +1,91 @@
 
+#box {
+    /* Layout Properties */
+    top: 316px;
+    left: 423px;
+    width: 1116px;
+    height: 591px;
+    position: absolute;
+
+    /* UI Properties */
+    background: #DBDBDB33 0% 0% no-repeat padding-box;
+    border: 1px solid #00000080;
+    border-radius: 70px;
+    opacity: 1;
+}
+
+
+#text1 {
+    /* Layout Properties */
+    top: 443px;
+    left: 497px;
+    width: 100px;
+    height: 21px;
+    position : absolute;
+
+    /* UI Properties */
+    text-align: left;
+    font: normal normal medium 18px/68px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+#text2 {
+    /* Layout Properties */
+    top: 525px;
+    left: 497px;
+    width: 200px;
+    height: 21px;
+    position : absolute;
+
+    /* UI Properties */
+    text-align: left;
+    font: normal normal medium 18px/68px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+#inquiry_head {
+    /* Layout Properties */
+    top: 470px;
+    left: 487px;
+    width: 987px;
+    height: 37px;
+    position : absolute;
+
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #00000080;
+    border-radius: 15px;
+    opacity: 1;
+}
+
+#inquiry_body {
+    /* Layout Properties */
+    top: 552px;
+    left: 487px;
+    width: 987px;
+    height: 225px;
+    position : absolute;
+
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #00000080;
+    border-radius: 15px;
+    opacity: 1;
+}
+
 #submit {
     /* Layout Properties */
+    top: 825px;
+    left: 861px;
+    width: 240px;
+    height: 39px;
     position : absolute;
-    top: 500px;
-    left: 749px;
-    width: 107px;
-    height: 49px;
+
+    /* UI Properties */
+    background: #00000080 0% 0% no-repeat padding-box;
+    opacity: 1;
 }

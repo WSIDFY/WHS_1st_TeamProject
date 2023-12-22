@@ -15,10 +15,6 @@ app.config['MYSQL_PASSWORD'] = 'overload'  # MySQL 비밀번호
 app.config['MYSQL_DB'] = 'userinfo'  # 사용할 데이터베이스 이름
 
 
-#문의 글을 담을 리스트
-inquiries = []
-
-
 #메인 페이지
 @app.route('/')
 def index():
@@ -48,11 +44,8 @@ def register():
             #SQL 쿼리 실행
             cur.execute("INSERT INTO user (id, name, pw, email) VALUES (%s, %s, %s, %s)",
                     (userid, nickname, password, email))
-
-            #변경 사항을 확정시킴(반드시 호출되어야 함)
             mysql.connection.commit()
 
-            #커서를 닫아줌
             cur.close()
         
         except Exception as e:
@@ -72,10 +65,8 @@ def login():
         password = request.form['password']
 
         try:
-            #mysql과 상호작용하는 커서 객체 생성
-            cur = mysql.connection.cursor()
-
             #사용자 정보를 가져옴 
+            cur = mysql.connection.cursor()
             cur.execute("SELECT * FROM user WHERE id = %s", (userid, ))
             user = cur.fetchone()
             
@@ -111,27 +102,63 @@ def product_list():
 
 
 #문의 제출 페이지
-@app.route('/submit_inquiry')
+@app.route('/submit_inquiry', methods=['GET', 'POST'])
 def submit_inquiry():
+    if request.method == 'POST':
+        username = request.form.get('inquiry_head')
+        inquiry_text = request.form.get('inquiry_body')
+
+        try:
+            # 사용자 이름과 내용을 추가시킴 
+            cur = mysql.connection.cursor()
+
+            cur.execute("SELECT * FROM inquiry")
+            inquiries = cur.fetchall()
+            
+
+            cur.execute("INSERT INTO inquiry (id, inquiry_head, inquiry_body) VALUES (%s, %s, %s)", (len(inquiries), username, inquiry_text))
+            mysql.connection.commit()
+
+            cur.close()
+
+            success_message = "문의가 제출되었습니다!"
+            return render_template('submit_inquiry.html', success_message=success_message)
+
+        except Exception as e:
+            return f'에러 발생: {str(e)}'
+
     return render_template('submit_inquiry.html')
 
 
-#문의 제출 기능 
-def submit():
-    username = request.form.get('username')
-    inquiry_text = request.form.get('inquiry_text')
-
-    if username and inquiry_text:
-        inquiries.append({'username': username, 'inquiry_text': inquiry_text})
-    
-    return render_template('submit_inquiry.html')
-
-
-#문의 확인 페이지 
-@app.route('/inquiry')
+#문의 확인 페이지
+@app.route('/inquiry', methods=['GET', 'POST'])
 def inquiry():
-    return render_template('inquiry.html', inquiries=inquiries)
+    try:
+        # inquriy 테이블의 내용을 가져옴
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM inquiry")
+        inquiries = cur.fetchall()
 
+        cur.close()
 
+        return render_template('inquiry.html', inquiries=inquiries)
+
+    except Exception as e:
+        return f'에러 발생: {str(e)}'
+
+#문의 확인 페이지
+@app.route('/view_inquiry', methods=['GET', 'POST'])
+def view_inquiry():
+    inquiry_id = request.form.get('inquiry_id')
+
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM inquiry WHERE id=%s", (inquiry_id,))
+    inquiry = cur.fetchone()
+
+    cur.close()
+
+    return render_template('view_inquiry.html', inquiry=inquiry)
+    
+    
 if __name__ == '__main__':
-    app.run(host='158.247.230.44', port=5000)
+    app.run(debug="true")
