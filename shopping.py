@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
+from flask import jsonify
+from werkzeug.utils import secure_filename
+import time
+
 import os
 
 
@@ -158,7 +162,56 @@ def view_inquiry():
     cur.close()
 
     return render_template('view_inquiry.html', inquiry=inquiry)
+
+
+#제품 상세보기 페이지
+@app.route('/product_detail', methods=['GET', 'POST'])
+def product_detail():
+
+    return render_template('product_detail.html')
     
+@app.route('/upload_image', methods=['POST'])
+def upload_image():
+    try:
+        uploaded_file = request.files['file']
+
+        # 이미지를 업로드할 경로
+        upload_path = 'static/uploaded_images/'
+        if not os.path.exists(upload_path):
+            os.makedirs(upload_path)
+
+        # 새로운 파일
+        timestamp = str(int(time.time()))
+        file_name = timestamp + '_' + secure_filename(uploaded_file.filename)
+
+        # 파일 저장
+        uploaded_file.save(os.path.join(upload_path, file_name))
+
+        # 데이터베이스 저장
+        try:
+            cur = mysql.connection.cursor()
+            cur.execute("INSERT INTO uploaded_images (file_path) VALUES (%s)", (file_name,))
+            mysql.connection.commit()
+            cur.close()
+        except Exception as e:
+            return jsonify({'success': False, 'error': str(e)})
+
+        # 업로드 성공
+        response_data = {
+            'success': True,
+            'file_path': f'{upload_path}{file_name}'
+        }
+        return jsonify(response_data)
+
+    except Exception as e:
+        # 업로드 실패
+        response_data = {
+            'success': False,
+            'error': str(e)
+        }
+        return jsonify(response_data)
     
+
 if __name__ == '__main__':
     app.run(debug="true")
+

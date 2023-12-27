@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품 상세보기 페이지</title>
+    <link href="../static/css/product_detail.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/header.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- header -->
+    {% include 'header.html' %}
+    <!-- header -->
+
+    <div id="text1">OVERLOAD 제품 상세보기</div>
+    <div id="text2">제품의 자세한 정보를 확인합니다.</div>
+
+    <div id="box">
+        <img src="../static/image/product1.jfif" class="picture" id="picture">
+    </div>
+
+    <div id="box2"></div>
+
+    <div id="product_name">상품명</div>
+    <div id="product_name1">Black Hoodie</div>
+
+    <div id="gender">성별</div>
+    <div id="gender1">남녀 공용</div>
+
+    <div id="price">가격</div>
+    <div id="price1">39,000원</div>
+
+    <div id="size">사이즈</div>
+    <select id="size1" size='1'>
+        <option value='90' selected>90</option>
+        <option value='95'>95</option>
+        <option value='100'>100</option>
+        <option value='105'>105</option>
+        <option value='110'>110</option>
+    </select>
+
+    <div id="review">OVERLOAD 리뷰</div>
+    <div id="box3">
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="fileInput" accept="image/*" />
+            <button type="button" onclick="uploadImage()">이미지 업로드</button>
+            <div>업로드된 파일 미리보기 : </div>
+            <img src="" class="product_picture" id="product_picture">
+        </form>
+    </div>
+
+    <script>
+        function uploadImage() {
+            var fileInput = document.getElementById('fileInput');
+            var file = fileInput.files[0];
+    
+            if (file) {
+                var formData = new FormData();
+                formData.append('file', file);
+    
+        
+                fetch('/upload_image', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+    
+                        var image = document.getElementById('product_picture');
+                        image.src = data.file_path;
+                        alert('이미지 업로드 성공!');
+                    } else {
+                        console.error('이미지 업로드 실패:', data.error);
+                    }
+                })
+                .catch(error => console.error('이미지 업로드 실패:', error));
+            }
+        }
+    </script>
+
+</body>
+</html>

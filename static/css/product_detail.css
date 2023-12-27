@@ -1,0 +1,226 @@
+#text1 {
+    /* Layout Properties */
+    top: 171px;
+    left: 490px;
+    width: 483px;
+    height: 49px;
+    position : absolute;
+
+    /* UI Properties */
+    text-align: left;
+    letter-spacing: 0px;
+    font: normal normal bold 40px/16px Pretendard Variable;
+    color: #000000;
+    opacity: 1;
+}
+
+#text2 {
+    /* Layout Properties */
+    top: 159px;
+    left: 490px;
+    width: 502px;
+    height: 49px;
+    position : absolute;
+
+    /* UI Properties */
+    text-align: left;
+    font: normal normal 300 30px/150px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+#box {
+    /* Layout Properties */
+    top: 291px;
+    left: 490px;
+    width: 404px;
+    height: 618px;
+    position : absolute;
+
+    /* UI Properties */
+    background: #70707033 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+#picture {
+    width: 404px;
+    height: 618px;
+}
+#box2 {
+    /* Layout Properties */
+    top: 291px;
+    left: 1005px;
+    width: 403px;
+    height: 318px;
+    position : absolute;
+
+    /* UI Properties */
+    background: #DBDBDB33 0% 0% no-repeat padding-box;
+    border: 1px solid #00000080;
+    border-radius: 20px;
+    opacity: 1;
+}
+
+#product_name {
+    /* Layout Properties */
+    top: 310px;
+    left: 1028px;
+    width: 57px;
+    height: 24px;
+    position : absolute;
+
+    /* UI Properties */
+    text-align: left;
+    font: normal normal medium 20px/129px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #3E3E3E;
+    opacity: 1;
+}
+
+#product_name1 {
+    /* Layout Properties */
+    top: 335px;
+    left: 1028px;
+    width: 194px;
+    height: 30px;
+
+    position : absolute;
+    /* UI Properties */
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) 25px/16px Pretendard Variable;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-000000);
+    text-align: left;
+    font: normal normal bold 25px/16px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+#gender {
+    /* Layout Properties */
+    top: 375px;
+    left: 1028px;
+    width: 60px;
+    height: 24px;
+    position : absolute;
+
+    /* UI Properties */
+    text-align: left;
+    font: normal normal medium 20px/129px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #3E3E3E;
+    opacity: 1;
+}
+
+#gender1 {
+/* Layout Properties */
+top: 400px;
+left: 1028px;
+width: 120px;
+height: 30px;
+position : absolute;
+
+/* UI Properties */
+font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) 25px/16px Pretendard Variable;
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+text-align: left;
+font: normal normal bold 25px/16px Pretendard Variable;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+}
+
+#price {
+    /* Layout Properties */
+    top: 440px;
+    left: 1028px;
+    width: 57px;
+    height: 24px;
+    position : absolute;
+
+    /* UI Properties */
+    text-align: left;
+    font: normal normal medium 20px/129px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #3E3E3E;
+    opacity: 1;
+}
+
+#price1 {
+/* Layout Properties */
+top: 465px;
+left: 1028px;
+width: 115px;
+height: 30px;
+position: absolute;
+/* UI Properties */
+font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) 25px/16px Pretendard Variable;
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+text-align: left;
+font: normal normal bold 25px/16px Pretendard Variable;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+}
+
+#size {
+    /* Layout Properties */
+    top: 505px;
+    left: 1028px;
+    width: 65px;
+    height: 24px;
+    position : absolute;
+    
+    /* UI Properties */
+    text-align: left;
+    font: normal normal medium 20px/129px Pretendard Variable;
+    letter-spacing: 0px;
+    color: #3E3E3E;
+    opacity: 1;
+}
+
+#size1 {
+    /* Layout Properties */
+top: 525px;
+left: 1028px;
+width: 357px;
+height: 22px;
+position : absolute;
+/* UI Properties */
+background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #00000080;
+opacity: 1;
+} 
+
+#box3 {
+        /* Layout Properties */
+        top: 1208px;
+        left: 264px;
+        width: 1521px;
+        height: 734px;
+        position : absolute;
+
+    /* UI Properties */
+    background: #70707033 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+#review {
+       /* Layout Properties */
+       top: 1108px;
+       left: 264px;
+       width: 1521px;
+       height: 734px;
+       position : absolute;
+       /* UI Properties */
+    text-align: center;
+    letter-spacing: 0px;
+    font: normal normal bold 40px/16px Pretendard Variable;
+    color: #000000;
+    opacity: 1;
+
+}

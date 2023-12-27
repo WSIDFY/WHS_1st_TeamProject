@@ -16,9 +16,9 @@
 
     <div id="box">
         {% if inquiry %}
-            <p><strong>ID:</strong> {{ inquiry[0] }}</p>
-            <p><strong>제목:</strong> {{ inquiry[1] }}</p>
-            <p><strong>내용:</strong> {{ inquiry[2] }}</p>
+            <p><strong>ID:</strong> "{{ inquiry[0] }} </p>
+            <p><strong>제목:</strong> {{ inquiry[1]|safe }}</p>
+            <p><strong>내용:</strong> {{ inquiry[2]|safe }}</p>
         {% else %}
             <p>게시물을 찾을 수 없습니다.</p>
         {% endif %}
