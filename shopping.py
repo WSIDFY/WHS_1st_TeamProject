@@ -167,8 +167,18 @@ def view_inquiry():
 #제품 상세보기 페이지
 @app.route('/product_detail', methods=['GET', 'POST'])
 def product_detail():
+    try:
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM uploaded_images")
+        pictures = cur.fetchall()
 
-    return render_template('product_detail.html')
+        cur.close()
+
+        return render_template('product_detail.html', pictures=pictures)
+
+    except Exception as e:
+        return f'에러 발생: {str(e)}'
+
     
 @app.route('/upload_image', methods=['POST'])
 def upload_image():
@@ -182,7 +192,7 @@ def upload_image():
 
         # 새로운 파일
         timestamp = str(int(time.time()))
-        file_name = timestamp + '_' + secure_filename(uploaded_file.filename)
+        file_name = timestamp + '_' + uploaded_file.filename
 
         # 파일 저장
         uploaded_file.save(os.path.join(upload_path, file_name))

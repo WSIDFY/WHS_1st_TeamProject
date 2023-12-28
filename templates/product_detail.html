@@ -44,10 +44,16 @@
         <form id="uploadForm" enctype="multipart/form-data">
             <input type="file" id="fileInput" accept="image/*" />
             <button type="button" onclick="uploadImage()">이미지 업로드</button>
-            <div>업로드된 파일 미리보기 : </div>
-            <img src="" class="product_picture" id="product_picture">
-        </form>
-    </div>
+            <hr>
+        </div>
+        <div id="box4">
+            {% for picture in pictures %}
+            <img src="../static/uploaded_images/{{ picture[1] }}" class="product_picture" id="product_picture">
+            <hr style= display:inline border-height:1px>
+            {% endfor %}
+        </div>
+    
+    
 
     <script>
         function uploadImage() {
@@ -58,7 +64,6 @@
                 var formData = new FormData();
                 formData.append('file', file);
     
-        
                 fetch('/upload_image', {
                     method: 'POST',
                     body: formData
@@ -66,7 +71,10 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-    
+                        var imageContainer = document.getElementById('box3');
+                        var currentHeight = parseInt(imageContainer.style.height) || 0;  // 현재 높이를 가져오고 숫자로 변환, 없으면 0으로 초기화
+                        imageContainer.style.height = (currentHeight + data.style.hegiht) + 'px';
+
                         var image = document.getElementById('product_picture');
                         image.src = data.file_path;
                         alert('이미지 업로드 성공!');

@@ -201,7 +201,7 @@ opacity: 1;
         top: 1208px;
         left: 264px;
         width: 1521px;
-        height: 734px;
+        height: 34px;
         position : absolute;
 
     /* UI Properties */
@@ -209,6 +209,14 @@ opacity: 1;
     opacity: 1;
 }
 
+#box4 {
+            /* Layout Properties */
+            top: 1242px;
+            left: 264px;
+            width: 0px;
+            height: 1000000000000000000000px;
+            position : absolute;
+}
 #review {
        /* Layout Properties */
        top: 1108px;
