@@ -102,12 +102,21 @@ def logout():
 #제품 리스트 페이지
 @app.route('/product_list')
 def product_list():
+    if 'userid' not in session:
+        alert_message = '로그인 해주세요.'
+        return render_template('login.html', alert_message=alert_message)
+    
+    
     return render_template("product_list.html")
 
 
 #문의 제출 페이지
 @app.route('/submit_inquiry', methods=['GET', 'POST'])
 def submit_inquiry():
+    if 'userid' not in session:
+        alert_message = '로그인 해주세요.'
+        return render_template('login.html', alert_message=alert_message)
+    
     if request.method == 'POST':
         username = request.form.get('inquiry_head')
         inquiry_text = request.form.get('inquiry_body')
@@ -137,6 +146,10 @@ def submit_inquiry():
 #문의 확인 페이지
 @app.route('/inquiry', methods=['GET', 'POST'])
 def inquiry():
+    if 'userid' not in session:
+        alert_message = '로그인 해주세요.'
+        return render_template('login.html', alert_message=alert_message)
+    
     try:
         # inquriy 테이블의 내용을 가져옴
         cur = mysql.connection.cursor()
@@ -153,6 +166,10 @@ def inquiry():
 #문의 확인 페이지
 @app.route('/view_inquiry', methods=['GET', 'POST'])
 def view_inquiry():
+    if 'userid' not in session:
+        alert_message = '로그인 해주세요.'
+        return render_template('login.html', alert_message=alert_message)
+    
     inquiry_id = request.form.get('inquiry_id')
 
     cur = mysql.connection.cursor()
@@ -167,6 +184,10 @@ def view_inquiry():
 #제품 상세보기 페이지
 @app.route('/product_detail', methods=['GET', 'POST'])
 def product_detail():
+    if 'userid' not in session:
+        alert_message = '로그인 해주세요.'
+        return render_template('login.html', alert_message=alert_message)
+    
     try:
         cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM uploaded_images")
@@ -182,6 +203,10 @@ def product_detail():
     
 @app.route('/upload_image', methods=['POST'])
 def upload_image():
+    if 'userid' not in session:
+        alert_message = '로그인 해주세요.'
+        return render_template('login.html', alert_message=alert_message)
+    
     try:
         uploaded_file = request.files['file']
 

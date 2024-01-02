@@ -14,6 +14,16 @@
     {% include 'header.html' %}
     <!-- header -->
 
+    {% if alert_message %}
+    <script>
+        alert("{{alert_message}}")
+    </script>
+    {% else %}
+
+    {% endif %}
+
+    
+
     {% if 'userid' in session %}
         
     {% else %}
